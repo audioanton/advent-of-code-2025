@@ -1,9 +1,9 @@
 package day_two;
 
+import day_two.part_one.IdParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +14,7 @@ class IdParserTest {
     void parse() {
         var expected = LongStream.rangeClosed(1, 9).toArray();
 
-        var parser = new  IdParser();
+        var parser = new IdParser();
 
         var got = parser.parse("1-9,2-10");
 

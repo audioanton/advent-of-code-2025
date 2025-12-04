@@ -1,4 +1,4 @@
-package day_two;
+package day_two.part_one;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

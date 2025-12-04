@@ -1,5 +1,6 @@
 package day_two;
 
+import day_two.part_one.IdChecker;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

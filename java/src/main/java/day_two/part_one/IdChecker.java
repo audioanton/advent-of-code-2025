@@ -1,4 +1,4 @@
-package day_two;
+package day_two.part_one;
 
 public class IdChecker {
     public Long sum;

@@ -1,5 +1,7 @@
 package day_one;
 
+import day_one.part_one.Dial;
+import day_one.part_one.Rotator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

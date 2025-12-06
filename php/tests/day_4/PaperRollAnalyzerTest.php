@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\day_4;
 
 use App\day_4\PaperRollAnalyzer;
 

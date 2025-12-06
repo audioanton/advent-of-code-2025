@@ -10,18 +10,27 @@ use App\day_4\PaperRollAnalyzer;
 describe('PaperRollAnalyzer', function () {
     it('returns 5', function () {
         $analyzer = new PaperRollAnalyzer();
-        $result = $analyzer->analyze(['..@@.@@@@.'], ['@@@.@.@.@@']);
+        $result = $analyzer->analyze(['..@@.@@@@.', '@@@.@.@.@@']);
         expect($result)->toBe(5);
     });
 
-    it('parses a line', function() {
+    it('returns 13', function () {
         $analyzer = new PaperRollAnalyzer();
-        $result = $analyzer->parse('..@@.@@@@.');
-        expect($result)->toEqual(
-            ['.', '.', '@', '@', '.', '@', '@', '@', '@', '.']
+
+        $result = $analyzer->analyze([
+            "..@@.@@@@.",
+            "@@@.@.@.@@",
+            "@@@@@.@.@@",
+            "@.@@@@..@.",
+            "@@.@@@@.@@",
+            ".@@@@@@@.@",
+            ".@.@.@.@@@",
+            "@.@@@.@@@@",
+            ".@@@@@@@@.",
+            "@.@.@@@.@."
+          ]
         );
+
+        expect($result)->toBe(13);
     });
-
-
-
 });

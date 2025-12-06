@@ -9,42 +9,61 @@ class PaperRollAnalyzer {
     public function analyze(array $input): int {
         $map = [];
         $row = 0;
+        $sum = 0;
+        $parsed = 0;
 
-        foreach ($input as $index => $line) {
-            $map[$row] = $this->parse($line);
-            
+        while ($row < count($input)) {
+            if (isset($input[$parsed])) {
+                $map[] = str_split($input[$parsed]);
+                $parsed++;
+            }
+
             if (count($map) > 1) {
                 foreach ($map[$row] as $col => $char) {
-                    if ($char !== '.') {
-                        $this->checkAdjacent($map, $row, $col);
+                    if ($char === '@') {
+                        if ($this->checkAdjacent($map, $row, $col)) {
+                            $sum++;
+                        }
                     }
                 }
+                $row++;
             }
-            $row++;
         }
 
-        return 0;
+        return $sum;
     }
     
-    public function checkAdjacent(array $map, int $row, int $col): void {
-        $directions = [
-            [-1, 0], // Up
-            [1, 0],  // Down
-            [0, -1], // Left
-            [0, 1],  // Right
+    public function checkAdjacent(array $map, int $row, int $col): bool {
+        $positions = [
+            [$row-1, $col-1],
+            [$row-1, $col],
+            [$row-1, $col+1],
+            [$row, $col+1],
+            [$row, $col-1],
+            [$row+1, $col-1],
+            [$row+1, $col],
+            [$row+1, $col+1],
         ];
 
-        foreach ($directions as [$dRow, $dCol]) {
-            $newRow = $row + $dRow;
-            $newCol = $col + $dCol;
+        $num = 0;
 
-            if (isset($map[$newRow][$newCol]) && $map[$newRow][$newCol] === '@') {
-                // Found an adjacent '@'
+        foreach ($positions as $position) {
+            if (isset($map[$position[0]][$position[1]]) and $map[$position[0]][$position[1]] === '@') {
+                $num += 1;
+                if ($num > 3) {
+                    return false;
+                }
             }
         }
+        return true;
     }
+}
 
-    public function parse(string $line): array {
-        return str_split($line);
-    }
+$string = file_get_contents("src/day_4/input");
+
+$array = explode("\n", $string);
+
+foreach ($array as $line) {
+    echo $line;
+
 }

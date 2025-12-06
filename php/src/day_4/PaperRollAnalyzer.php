@@ -57,13 +57,19 @@ class PaperRollAnalyzer {
         }
         return true;
     }
+
+    public function parse(string $input): array {
+        return explode("\n", $input);
+    }
 }
 
-$string = file_get_contents("src/day_4/input");
 
-$array = explode("\n", $string);
+$fileString = file_get_contents("src/day_4/input");
 
-foreach ($array as $line) {
-    echo $line;
+$analyzer = new PaperRollAnalyzer();
 
-}
+$parsed = $analyzer->parse($fileString);
+
+$result = $analyzer->analyze($parsed);
+
+echo $result;

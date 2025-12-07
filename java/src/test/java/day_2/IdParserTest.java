@@ -1,6 +1,6 @@
-package day_two;
+package day_2;
 
-import day_two.part_one.IdParser;
+import day_2.part_one.IdParser;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

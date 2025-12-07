@@ -1,6 +1,6 @@
-package day_one;
+package day_1;
 
-import day_one.part_one.Dial;
+import day_1.part_one.Dial;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

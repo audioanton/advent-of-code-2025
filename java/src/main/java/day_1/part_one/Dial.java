@@ -1,4 +1,4 @@
-package day_one.part_one;
+package day_1.part_one;
 
 public class Dial {
     public int current;

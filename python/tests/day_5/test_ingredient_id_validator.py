@@ -68,18 +68,6 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(result, 3)
 
-    def test_splits_ids(self):
-        validator = IngredientIdValidator()
-
-        result = validator.splits_ids("""1
-5
-8
-11
-17
-32""")
-
-        self.assertEqual(result, ["1", "5", "8", "11", "17", "32"])
-
 
 if __name__ == '__main__':
     unittest.main()

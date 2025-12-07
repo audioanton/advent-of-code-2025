@@ -5,9 +5,6 @@ class IngredientIdValidator:
     def split_ranges_ids(self, input):
         return re.split(r"\n\n", input)
 
-    def splits_ids(self, id_string):
-        return id_string.split("\n")
-
     def to_numbers(self, ids):
         return [int(ingredient_id) for ingredient_id in ids]
 

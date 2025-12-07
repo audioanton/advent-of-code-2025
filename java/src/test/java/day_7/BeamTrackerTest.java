@@ -26,5 +26,7 @@ class BeamTrackerTest {
         var result = this.tracker.countBeamSplits(previous, row);
 
         assertEquals(1, result.count());
+
+        assertEquals(Set.of(6,8), result.beams());
     }
 }
